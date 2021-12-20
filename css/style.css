@@ -216,12 +216,13 @@ body {
 }
 
 /* ----- attribution ----- */
-.attribution {
+/* .attribution {
   position: fixed;
+  margin: 0 auto;
   font-size: 11px;
   text-align: center;
   bottom: 1vh;
 }
 .attribution a {
   color: hsl(var(--clr-primary));
-}
+} */
