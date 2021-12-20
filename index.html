@@ -3,31 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
+    <!-- Favicon -->
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <!-- Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS & JS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
 
     <title>Frontend Mentor | Article preview component</title>
   </head>
   <body>
-    Shift the overall look and feel by adding these wonderful touches to
-    furniture in your home Ever been in a room and felt like something was
-    missing? Perhaps it felt slightly bare and uninviting. I've got some simple
-    tips to help you make any room feel complete. Michelle Appleton 28 Jun 2020
-    Share
-
+    <main>
+      <article class="article">
+        <div class="article__thumbnail"></div>
+        <div class="wrapper">
+          <div class="article__body">
+            <div class="article-title">
+              <h1>
+                Shift the overall look and feel by adding these wonderful
+                touches to furniture in your home
+              </h1>
+            </div>
+            <div class="article-paragraph">
+              <p>
+                Ever been in a room and felt like something was missing? Perhaps
+                it felt slightly bare and uninviting. I've got some simple tips
+                to help you make any room feel complete.
+              </p>
+            </div>
+          </div>
+          <div class="article__details flex">
+            <div class="article-author flex">
+              <div class="author-avatar">
+                <img src="images/avatar-michelle.jpg" alt="author" />
+              </div>
+              <div class="author-about">
+                <p class="author-name">Michelle Appleton</p>
+                <p class="date-posted">28 Jun 2020</p>
+              </div>
+            </div>
+            <div class="article-share" aria-pressed="false">
+              <i class="bx bxs-share"></i>
+            </div>
+            <div class="share-details flex" aria-hidden="true">
+              <span class="share-text">Share</span>
+              <img src="images/icon-facebook.svg" alt="facebook" />
+              <img src="images/icon-twitter.svg" alt="twitter" />
+              <img src="images/icon-pinterest.svg" alt="pinterest" />
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
         Frontend Mentor
       </a>
       . Coded by
-      <a href="#">Your Name Here</a>
+      <a href="https://www.instagram.com/shaqeeb_designs/" target="_blank">
+        Shaqeeb
+      </a>
       .
     </div>
   </body>

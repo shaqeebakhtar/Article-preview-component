@@ -1,7 +1,227 @@
+/* ----- Custom Properties ----- */
+:root {
+  /* colors */
+  --clr-primary: 217 19% 35%;
+  --clr-primary-light: 214 17% 51%;
+  --clr-primary-very-light: 212 23% 69%;
+  --clr-bg: 210 46% 95%;
+
+  /* font-size */
+  --fs-regular: 0.9375rem;
+
+  /* font-weight */
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/* ----- CSS Reset ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  font-family: "Manrope", sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+/* ----- main ----- */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(var(--clr-bg));
+  padding-inline: 1.25em;
+}
+
+.article {
+  max-width: 100%;
+  margin-inline: auto;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 15px 15px 2px hsl(var(--clr-primary-light) / 0.2);
+}
+
+.article__thumbnail {
+  height: 15rem;
+  width: 100%;
+  background-image: url("/images/drawers.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.article__body {
+  padding: 2em;
+  padding-bottom: 1em;
+}
+
+.article-title {
+  color: hsl(var(--clr-primary));
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-bold);
+  line-height: normal;
+  margin-block: 0.5em 1em;
+}
+
+.article-paragraph {
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-regular);
+  color: hsl(var(--clr-primary-light));
+}
+
+.article__details {
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 2em;
+  position: relative;
+}
+
+.article-author {
+  align-items: center;
+}
+
+.author-avatar img {
+  width: 2.75rem;
+  border-radius: 50%;
+}
+
+.author-about {
+  font-size: var(--fs-regular);
+  margin-inline: 1.25em;
+}
+
+.author-name {
+  font-weight: var(--fw-bold);
+  color: hsl(var(--clr-primary));
+}
+
+.date-posted {
+  font-weight: var(--fw-regular);
+  color: hsl(var(--clr-primary-very-light));
+}
+
+.article-share i {
+  font-size: 1.125rem;
+  transform: scaleX(-1);
+}
+
+.article-share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--clr-primary));
+  background-color: hsl(var(--clr-bg));
+  padding: 0.5em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 9999;
+}
+
+.share-details {
+  position: absolute;
+  inset: 0;
+  background-color: hsl(var(--clr-primary));
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2em 7.75em;
+}
+
+.share-text {
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  letter-spacing: 4.5px;
+  color: hsl(var(--clr-primary-very-light));
+}
+
+.share-details img {
+  width: 1.3125rem;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.share-details[aria-hidden="true"] {
+  display: none;
+}
+
+.article-share[aria-pressed="true"] {
+  color: white;
+  background-color: hsl(var(--clr-primary-light));
+}
+
+@media (min-width: 50em) {
+  .article {
+    display: grid;
+    grid-template-columns: 18rem repeat(2, minmax(12rem, 18rem));
+    overflow: visible;
+    margin: 1.5em;
+  }
+
+  .article__thumbnail {
+    height: 100%;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .wrapper {
+    grid-column: 2 / 4;
+  }
+
+  .article__details {
+    padding-bottom: 2em;
+  }
+
+  .share-details {
+    width: 50%;
+    height: 65%;
+    border-radius: 0.5rem;
+    padding: 0 2.5em;
+    top: -70%;
+    left: 65%;
+    box-shadow: 0 10px 15px 2px hsl(var(--clr-primary) / 0.25);
+  }
+
+  .share-details::before {
+    content: "";
+    position: absolute;
+    background-color: hsl(var(--clr-primary));
+    width: 1.75rem;
+    height: 0.875rem;
+    top: 100%;
+    right: 43%;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+  }
+}
+
+/* ----- attribution ----- */
 .attribution {
+  position: fixed;
   font-size: 11px;
   text-align: center;
+  bottom: 1vh;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: hsl(var(--clr-primary));
 }
